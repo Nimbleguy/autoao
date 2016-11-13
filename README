@@ -1,0 +1,4 @@
+To do stuff, execute auto like this:
+./auto [type] [pastebinid]
+Where [type] is Repl for discord and Replp for pesterchum, and [pastebinid] is the 8-letter id in a pastebin url.
+It will output a link to the formatted log. Requires netcat, curl, and java.

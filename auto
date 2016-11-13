@@ -1,0 +1,11 @@
+#!/bin/sh
+for id in "$@"; do
+	if [ "${id}" != "$1" ]; then
+		info=$(curl -s "pastebin.com/raw/${id}")
+		repl=${info// /→}
+		rep=${repl//\\n/ }
+		echo $rep > tmp
+		java $1 $(cat tmp) | nc termbin.com 9999
+		rm tmp
+	fi
+done
