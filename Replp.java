@@ -29,7 +29,7 @@ public class Replp {
       else{
         i = others.matcher(i).replaceAll("");
       }
-      i = i.replaceAll("\\[\\[\\*\\*", "\\[").replaceAll("\\*\\*\\]\\]", "\\]").replaceAll("\\[\\[\\*", "\\[").replaceAll("\\*\\]\\]", "\\]");
+      i = i.replaceAll("\\[OUTPUT: \\[\\*\\*", "\\[OUTPUT: ").replaceAll("\\*\\*\\]\\]", "\\]").replaceAll("\\[OUTPUT: \\[\\*", "\\[OUTPUT: \\*").replaceAll("\\]\\]", "\\]");
       out = out + "\n" + i;
     }
     System.out.println(out);
