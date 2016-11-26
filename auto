@@ -1,7 +1,12 @@
 #!/bin/sh
 for id in "$@"; do
-	if [ "${id}" != "$1" ]; then
-		info=$(curl -s "pastebin.com/raw/${id}")
+	if [ "${id}" != "$1" ] && [ "${id}" != "f" ]; then
+		info=""
+		if [ "$2" != "f" ]; then
+			info=$(curl -s "pastebin.com/raw/${id}")
+		else
+			info=$(cat "${id}")
+		fi
 		repl=${info// /→}
 		rep=${repl//\\n/ }
 		echo $rep > /tmp/autoao
