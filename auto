@@ -4,8 +4,8 @@ for id in "$@"; do
 		info=$(curl -s "pastebin.com/raw/${id}")
 		repl=${info// /→}
 		rep=${repl//\\n/ }
-		echo $rep > tmp
-		java $1 $(cat tmp) | nc termbin.com 9999
-		rm tmp
+		echo $rep > /tmp/autoao
+		java $1 $(cat /tmp/autoao) | nc termbin.com 9999
+		rm /tmp/autoao
 	fi
 done
